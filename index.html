@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Tienda</title>
+</head>
+<body>
+    <h1>Tienda de zapatillas</h1>
+    <div class="ventana-zapatillas">
+        <div class="imagenes-grandes">
+            <img src="images/blanco.png" alt="imagenes zapatillas y colores" id="espacioImg">
+        
+        </div>
+        <div class="listado-opciones">
+            <div class="texto">
+                <h3>ZetaRush X1: potencia y color en cada paso</h3>
+                <p> 
+                    Las nuevas ZetaRush X1 llegan en una vibrante variedad de colores para destacar tu estilo. Ligeras, cómodas y con suela de alto rendimiento, son perfectas para el ritmo de la ciudad o el entrenamiento. Elige tu combinación favorita y camina con personalidad. ¡Hazlas tuyas!
+                    </p>
+            </div>
+            <div class="opciones-producto">
+                <div class="listado-colores">
+                    <h5>Selecciona un color:</h5>
+                    <div class="color">
+                        <label for="blanco">Blanco</label>
+                        <input type="radio" name="imagenes" id="blanco" checked onclick="muestraImagen(event); reiniciarElementos()">
+                    </div>
+                    <div class="color">
+                        <label for="negro">Negro</label>
+                        <input type="radio" name="imagenes" id="negro" onclick="muestraImagen(event); reiniciarElementos()">
+                    </div>
+                    <div class="color">
+                        <label for="rojo">Rojo</label>
+                        <input type="radio" name="imagenes" id="rojo" onclick="muestraImagen(event); reiniciarElementos()">
+                    </div>
+                </div>
+                <div class="tallas">
+                    <div class="titulo-tallas">
+                        <h5>Escoge una talla:</h5>
+                    </div>
+                    <div class="select-tallas">
+                        <select name="tallas" id="tallas" onchange="reiniciarSubtotal(); calculaPrecioTallaColor(); reiniciarEnvio()">
+                            <option value="small" >22 cm  a 25 cm</option>
+                            <option value="medium" >25.5 cm a 27 cm</option>
+                            <option value="large" >27.5 cm a 29.5 cm</option>
+                            <option value="blank" hidden selected></option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="subtotal">
+                <input type="text" placeholder="Subtotal" id="subtotal-text" disabled>
+            </div>
+            <div class="envio">
+                <div class="titulo-envio">
+                    <h6>¿Como retirás tu compra? </h6>
+                </div>
+                
+                <div class="opciones-envio">
+                    <label for="si">Retiro en fábrica</label>
+                    <input type="radio" name="envio" id="retiro" onclick="calculaTotal(event); mostrarInputDireccion(event)">
+                    <label for="envio">Envío a domicio</label>
+                    <input type="radio" name="envio" id="envio" onclick="calculaTotal(event); mostrarInputDireccion(event)">
+                </div>
+            </div>
+            <div class="direccion-envio">
+                <label for="direccion" id="direccion-label" hidden>Ingrese su dirección: </label>
+                <textarea name="direccion" id="direccion" hidden></textarea>
+            </div>
+
+            <div class="total">
+                <input type="text" placeholder="Total" id="total-text" disabled>
+                <p>*Envio disponible en el radio <br> urbano de Valdivia con recargo de $4000</p>
+            </div>
+            <div class="confirmar-envio">
+                <button type="submit" onclick="confirmarPedido(event)">Confirmar pedido</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-redes">
+        <h6>Síguenos en redes sociales</h6>
+        <div class="iconos-redes">
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            <a href="https://wa.me/56978488210" target="_blank">WhatsApp</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
