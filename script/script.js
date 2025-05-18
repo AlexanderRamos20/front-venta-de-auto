@@ -1,9 +1,7 @@
 let colorSeleccionado = "blanco";
-let talla = "blank";
-let subtotal = 0;
-let total = subtotal;
-let envio = false;
-let direccionEnvio = "";
+let precioBase = 3500000;
+let subtotalColor = 0;
+let subtotalAccesorio = 0;
 
 
 function muestraImagen(event){
@@ -13,20 +11,26 @@ function muestraImagen(event){
    
     if (botonId === 'blanco'){
     img.src="images/auto-blanco.png";
+    subtotalColor = precioBase
+    calcularTotal();
     }
     else if (botonId === 'negro'){
-        img.src="images/auto-negro.png"
+        img.src="images/auto-negro.png";
+        subtotalColor = precioBase + 800000;
+        calcularTotal();
     }
     else if (botonId === 'rojo'){
-        img.src="images/auto-rojo.png"
+        img.src="images/auto-rojo.png";
+        subtotalColor = precioBase + 400000;
+        calcularTotal();
     }
 
-    setTimeout(() =>{
-        const tallaSeleccionada = document.getElementById("tallas").value;
-        if (tallaSeleccionada) {
-            calculaPrecioTallaColor();
-        }
-    } , 0);
+    // setTimeout(() =>{
+    //     const tallaSeleccionada = document.getElementById("tallas").value;
+    //     if (tallaSeleccionada) {
+    //         calculaPrecioTallaColor();
+    //     }
+    // } , 0);
 }
 // function reiniciarSubtotal(){
 //     document.getElementById("subtotal-text").value="";
@@ -44,78 +48,12 @@ function muestraImagen(event){
 // function reiniciarElementos(){
 //     reiniciarSubtotal(); reiniciarTalla(); reiniciarEnvio()
 // }
-function calculaPrecioTallaColor(){
-    talla = document.getElementById("tallas").value;
-    const textoSubtotal = document.getElementById("subtotal-text");
 
-    if (talla === "blank") {
-        subtotal = 0;
-        textoSubtotal.value = "";
-        return;}
 
-    let precioBase = 20000;
-    subtotal = precioBase;
-    if (colorSeleccionado === 'blanco'){
-        if(talla === "medium"){
-            subtotal += 4000;
-        } 
-        else if (talla ==="large"){
-            subtotal += 6000;
-        } else {
-            subtotal = precioBase;
-        }
-    }
-    else if (colorSeleccionado === 'negro'){
-        if(talla === "small"){
-            subtotal += 9000;
-        } 
-        else if (talla ==="medium"){
-            subtotal += 13000;
-        } else {
-            subtotal += 17000;
-        }
-    }
-    else if (colorSeleccionado === 'rojo'){
-       if(talla === "medium"){
-            subtotal += 16000;
-        } 
-        else if (talla ==="large"){
-            subtotal += 19000;
-        } else {
-            subtotal = precioBase;
-        }
-    }
-    // parrafoSubtotal.innerHTML = `Subtotal: \$${subtotal}`;
-    textoSubtotal.value = `Subtotal: \$${subtotal}`;
-};
-
-function calculaTotal(event){
-    let envioId= event.target.id;
-    let textoTotal = document.getElementById("total-text");
-    
-    if (envioId === "envio"){
-        total = subtotal + 4000;
-        envio = true;
-    }
-    else{
-        total = subtotal;
-        envio = false;
-    }
-    textoTotal.value = `Total: \$${total}`;
-    return total;
-};
-
-function mostrarInputDireccion(event){
-    let envioId= event.target.id;
-
-    if (envioId==="envio") {
-        document.getElementById("direccion").hidden = false;
-        document.getElementById("direccion-label").hidden = false;
-    } else {
-        document.getElementById("direccion").hidden = true;
-        document.getElementById("direccion-label").hidden = true;
-    }
-};
+function calcularTotal(){
+    total = document.getElementById("subtotal-text");
+    total.value = (`$${subtotalColor + subtotalAccesorio} clp`);
+}
 
 function confirmarPedido (event){
     direccionEnvio = document.getElementById("direccion").value.trim();

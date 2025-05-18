@@ -42,17 +42,31 @@
                     </div>
                 </div>
             </div>
-            <div class="tallas">
-                <div class="titulo-tallas">
-                    <h5>Escoge una talla:</h5>
+            <div class="accesorios">
+                <div class="titulo-accesorios">
+                    <h5>Escoge accesorios</h5>
                 </div>
-                <div class="select-tallas">
-                    <select name="tallas" id="tallas" onchange="reiniciarSubtotal(); calculaPrecioTallaColor(); reiniciarEnvio()">
-                        <option value="small" >22 cm  a 25 cm</option>
-                        <option value="medium" >25.5 cm a 27 cm</option>
-                        <option value="large" >27.5 cm a 29.5 cm</option>
-                        <option value="blank" hidden selected></option>
-                    </select>
+                <div class="checkbox-accesorios">
+                    <div class="elemento-accesorio">
+                        <input type="checkbox" name="accesorios" id="neblineros">
+                        <label for="neblineros"> Neblineros</label>
+                    </div>
+                    <div class="elemento-accesorio">
+                        <input type="checkbox" name="accesorios" id="portaequipaje">
+                        <label for="portaequipaje"> Portaequipajes</label>
+                    </div>
+                    <div class="elemento-accesorio"> 
+                        <input type="checkbox" name="accesorios" id="accesorios-mascotas">
+                        <label for="accesorios-mascotas">Cinturones y arnés para mascotas</label>
+                    </div>
+                    <div class="elemento-accesorio">    
+                        <input type="checkbox" name="accesorios" id="luces-led">
+                        <label for="luces-led">Luces LED</label>
+                    </div>
+                    <div class="elemento-accesorio">
+                        <input type="checkbox" name="accesorios" id="camara-trasera">
+                        <label for="camara-trasera">Cámara trasera</label>
+                    </div>
                 </div>
             </div>
             <div class="subtotal">
