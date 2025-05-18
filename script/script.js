@@ -12,13 +12,13 @@ function muestraImagen(event){
     colorSeleccionado = botonId;
    
     if (botonId === 'blanco'){
-    img.src="images/blanco.png";
+    img.src="images/auto-blanco.png";
     }
     else if (botonId === 'negro'){
-        img.src="images/negro.png"
+        img.src="images/auto-negro.png"
     }
     else if (botonId === 'rojo'){
-        img.src="images/rojo.png"
+        img.src="images/auto-rojo.png"
     }
 
     setTimeout(() =>{
@@ -28,22 +28,22 @@ function muestraImagen(event){
         }
     } , 0);
 }
-function reiniciarSubtotal(){
-    document.getElementById("subtotal-text").value="";
-}
-function reiniciarTalla(){
-    document.getElementById("tallas").value="blank";
-}
+// function reiniciarSubtotal(){
+//     document.getElementById("subtotal-text").value="";
+// }
+// function reiniciarTalla(){
+//     document.getElementById("tallas").value="blank";
+// }
 
-function reiniciarEnvio(){
-    document.getElementById("retiro").checked = false;
-    document.getElementById("envio").checked = false;
-    document.getElementById("total-text").value = "";
-}
+// function reiniciarEnvio(){
+//     document.getElementById("retiro").checked = false;
+//     document.getElementById("envio").checked = false;
+//     document.getElementById("total-text").value = "";
+// }
 
-function reiniciarElementos(){
-    reiniciarSubtotal(); reiniciarTalla(); reiniciarEnvio()
-}
+// function reiniciarElementos(){
+//     reiniciarSubtotal(); reiniciarTalla(); reiniciarEnvio()
+// }
 function calculaPrecioTallaColor(){
     talla = document.getElementById("tallas").value;
     const textoSubtotal = document.getElementById("subtotal-text");
