@@ -41,9 +41,9 @@
                 <p> Nuestro auto combina eficiencia, diseño moderno y tecnología avanzada para brindar una experiencia de manejo cómoda, segura y económica. </p>
                     <ul class="list-group"> 
                         <li class="list-group-item">Garantía: 5 años o 100.000 km</li>
-                        <li class="list-group-item ">n° pasajeros: 5</li>
+                        <li class="list-group-item ">N° pasajeros: 5</li>
                         <li class="list-group-item">Motor: 1.6L Turbo 4 cilindros</li>
-                        <li class="list-group-item">Rendimiento: <ul><li>18 km/l en ciudad</li><li>22 km/l en carretera</li></ul></li>
+                        <li class="list-group-item">Rendimiento: <ul><li>18 km/L en ciudad</li><li>22 km/L en carretera</li></ul></li>
                         <li class="list-group-item">Procedencia: Chilena con tecnología europea</li>
                     </ul>
             </div>
@@ -76,7 +76,7 @@
                             <input type="checkbox" name="accesorios" id="camara-trasera" value="100000" >
                             <label for="camara-trasera">Cámara trasera ($100.000)</label>
                         </div>
-                        <button type="button" class="btn btn-secondary btn-sm" onclick="reiniciarAccesorios()">Reiniciar accesorios</button>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="reiniciarAccesorios()">Quitar accesorios</button>
                     </div>
                 </div>
             </div>
@@ -84,7 +84,25 @@
                 <input type="text" placeholder="Total" id="total-text" disabled value="3500000 clp">
             </div>
             <div class="confirmar-envio ">
-                <button type="submit" class="btn btn-success">Confirmar pedido</button>
+                <button type="submit" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="mostrarDatos()">Confirmar pedido</button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-4" id="exampleModalLabel" style="color: black;">Confirmación pedido</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <strong>Estos son los datos de tu pedido:</strong>
+                            <div class="datos-pedido" id="datos-pedido"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-success">¡Contáctenme!</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
