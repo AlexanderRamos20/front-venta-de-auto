@@ -12,81 +12,100 @@
     <div class="ventana-auto">
         <div class="imagenes-grandes">
             <img src="images/auto-blanco.png" alt="imagenes autos" id="espacioImg">
+            <div class="opciones-producto">
+                <div class="listado-colores">
+                    <div class="color-titulo">
+                        <h5>Selecciona un color:</h5>
+                    </div>
+                    <div class="color-opciones">
+                        <div class="color">
+                            <label for="blanco">Blanco</label>
+                            <input type="radio" name="color-auto" id="blanco" checked onclick="muestraImagen(event)">
+                        </div>
+                        <div class="color">
+                            <label for="negro">Negro</label>
+                            <input type="radio" name="color-auto" id="negro" onclick="muestraImagen(event)">
+                        </div>
+                        <div class="color">
+                            <label for="rojo">Rojo</label>
+                            <input type="radio" name="color-auto" id="rojo" onclick="muestraImagen(event)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <div class="listado-opciones">
             <div class="texto">
                 <h3>Cacharro Veloz 3000</h3>
                 <p> Nuestro auto combina eficiencia, diseño moderno y tecnología avanzada para brindar una experiencia de manejo cómoda, segura y económica. </p>
-                    <ul> 
-                        <li>Garantía: 5 años o 100.000 km</li>
-                        <li>n° pasajeros: 5</li>
-                        <li>Motor: 1.6L Turbo 4 cilindros</li>
-                        <li>Rendimiento: <ul><li>18 km/l en ciudad</li><li>22 km/l en carretera</li></ul></li>
-                        <li>Procedencia: Chilena con tecnología europea</li>
+                    <ul class="list-group"> 
+                        <li class="list-group-item">Garantía: 5 años o 100.000 km</li>
+                        <li class="list-group-item ">n° pasajeros: 5</li>
+                        <li class="list-group-item">Motor: 1.6L Turbo 4 cilindros</li>
+                        <li class="list-group-item">Rendimiento: <ul><li>18 km/l en ciudad</li><li>22 km/l en carretera</li></ul></li>
+                        <li class="list-group-item">Procedencia: Chilena con tecnología europea</li>
                     </ul>
             </div>
-            <div class="opciones-producto">
-                <div class="listado-colores">
-                    <h5>Selecciona un color:</h5>
-                    <div class="color">
-                        <label for="blanco">Blanco</label>
-                        <input type="radio" name="imagenes" id="blanco" checked onclick="muestraImagen(event); reiniciarElementos()">
-                    </div>
-                    <div class="color">
-                        <label for="negro">Negro</label>
-                        <input type="radio" name="imagenes" id="negro" onclick="muestraImagen(event); reiniciarElementos()">
-                    </div>
-                    <div class="color">
-                        <label for="rojo">Rojo</label>
-                        <input type="radio" name="imagenes" id="rojo" onclick="muestraImagen(event); reiniciarElementos()">
-                    </div>
-                </div>
-            </div>
+            
             <div class="accesorios">
-                <div class="titulo-accesorios">
-                    <h5>Escoge accesorios</h5>
+                <div class="titulo-accesorios ">
+                    <button class="btn btn-light btn-sm mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#accesoriosCollapse" aria-expanded="false" aria-controls="accesoriosCollapse" >
+                        <h5>Escoge accesorios <span class="dropdown-icon">▼</span></h5>
+                    </button>
                 </div>
-                <div class="checkbox-accesorios">
-                    <div class="elemento-accesorio">
-                        <input type="checkbox" name="accesorios" id="neblineros">
-                        <label for="neblineros"> Neblineros</label>
-                    </div>
-                    <div class="elemento-accesorio">
-                        <input type="checkbox" name="accesorios" id="portaequipaje">
-                        <label for="portaequipaje"> Portaequipajes</label>
-                    </div>
-                    <div class="elemento-accesorio"> 
-                        <input type="checkbox" name="accesorios" id="accesorios-mascotas">
-                        <label for="accesorios-mascotas">Cinturones y arnés para mascotas</label>
-                    </div>
-                    <div class="elemento-accesorio">    
-                        <input type="checkbox" name="accesorios" id="luces-led">
-                        <label for="luces-led">Luces LED</label>
-                    </div>
-                    <div class="elemento-accesorio">
-                        <input type="checkbox" name="accesorios" id="camara-trasera">
-                        <label for="camara-trasera">Cámara trasera</label>
+                <div class="checkbox-accesorios collapse" id="accesoriosCollapse">
+                    <div class="checkbox-accesorios">
+                        <div class="elemento-accesorio">
+                            <input type="checkbox" name="accesorios" id="neblineros" value="80000" >
+                            <label for="neblineros"> Neblineros ($80.000)</label>
+                        </div>
+                        <div class="elemento-accesorio">
+                            <input type="checkbox" name="accesorios" id="portaequipaje" value="350000">
+                            <label for="portaequipaje"> Portaequipajes ($350.000)</label>
+                        </div>
+                        <div class="elemento-accesorio">
+                            <input type="checkbox" name="accesorios" id="accesorios-mascotas" value="50000" >
+                            <label for="accesorios-mascotas">Cinturones y arnés para mascotas ($50.000)</label>
+                        </div>
+                        <div class="elemento-accesorio">
+                            <input type="checkbox" name="accesorios" id="luces-led" value="70000">
+                            <label for="luces-led">Luces LED ($70.000)</label>
+                        </div>
+                        <div class="elemento-accesorio">
+                            <input type="checkbox" name="accesorios" id="camara-trasera" value="100000" >
+                            <label for="camara-trasera">Cámara trasera ($100.000)</label>
+                        </div>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="reiniciarAccesorios()">Reiniciar accesorios</button>
                     </div>
                 </div>
             </div>
-            <div class="subtotal">
-                <input type="text" placeholder="Total" id="subtotal-text" disabled>
+            <div class="subtotal ">
+                <input type="text" placeholder="Total" id="total-text" disabled value="3500000 clp">
             </div>
-            <div class="confirmar-envio">
-                <button type="submit" onclick="confirmarPedido(event)">Confirmar pedido</button>
+            <div class="confirmar-envio ">
+                <button type="submit" class="btn btn-success">Confirmar pedido</button>
             </div>
         </div>
     </div>
     </div>
 
-    <footer class="footer-redes">
-        <h6>Síguenos en redes sociales</h6>
-        <div class="iconos-redes">
-            <a href="https://www.instagram.com" target="_blank">Instagram</a>
-            <a href="https://www.facebook.com" target="_blank">Facebook</a>
-            <a href="https://wa.me/56978488210" target="_blank">WhatsApp</a>
-        </div>
-    </footer>
+   <footer class="footer-redes position-relative">
+    <h6>Síguenos en redes sociales</h6>
+    <div class="iconos-redes">
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="images/icon-instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="images/icon-facebook.png" alt="Facebook">
+        </a>
+        <a href="https://wa.me/56978488210" target="_blank">
+            <img src="images/icon-whatsapp.png" alt="WhatsApp">
+        </a>
+    </div>
+
+    <p class="footer-credito">© 2025 Alexander Ramos. Todos los derechos reservados.</p>
+</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
     <script src="script/script.js"></script>
