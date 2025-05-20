@@ -72,7 +72,6 @@ function recalcularTotal(){
     const arregloColorAccesorios = [...arregloColorAuto, ...arregloAccesorios]
     arregloColorAccesorios.forEach(elemento => {
         elemento.addEventListener('change', calcularTotal);
-        console.log("paso 1")
     });
 }
 
@@ -105,6 +104,20 @@ function mostrarDatos(){
     infoPedido.innerHTML = mensajePedido;
 };
 
-function enviarMensajeWhatsapp(){
-    
+function validarCorreo(){
+    const emailInput = document.getElementById("email");
+    const email = emailInput.value.trim();
+    const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!regexCorreo.test(email)){
+        alert("Correo inválido");
+        return false;
+    }
+    return true;
 };
+
+document.getElementById("formulario-pedido").addEventListener("submit", function (e) {
+    if (!validarCorreo()) {
+        e.preventDefault(); 
+    }
+});
